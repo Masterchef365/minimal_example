@@ -86,6 +86,7 @@ fn main() -> Result<()> {
         )
         .result()?;
     let map_a = memory_a.map(&device, ..).result()?;
+    //map_a.unmap(&device).result()?;
 
     let buffer_b = unsafe { device.create_buffer(&create_info, None, None) }.result()?;
     let memory_b = allocator
